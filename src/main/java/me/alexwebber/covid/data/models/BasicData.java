@@ -25,4 +25,76 @@ public class BasicData {
 	@Deprecated
 	Integer posNeg;
 	String notes;
+
+	public Integer getPositive() {
+		return positive;
+	}
+
+	public Integer getNegative() {
+		return negative;
+	}
+
+	public Integer getPending() {
+		return pending;
+	}
+
+	public Integer getHospitalizedCurrently() {
+		return hospitalizedCurrently;
+	}
+
+	public Integer getHospitalizedCumulative() {
+		return hospitalizedCumulative;
+	}
+
+	public Integer getInIcuCurrently() {
+		return inIcuCurrently;
+	}
+
+	public Integer getInIcuCumulative() {
+		return inIcuCumulative;
+	}
+
+	public Integer getOnVentilatorCurrently() {
+		return onVentilatorCurrently;
+	}
+
+	public Integer getOnVentilatorCumulative() {
+		return onVentilatorCumulative;
+	}
+
+	public Integer getRecovered() {
+		return recovered;
+	}
+
+	public String getHash() {
+		return hash;
+	}
+
+	public String getLastModified() {
+		return lastModified;
+	}
+
+	public Integer getDeath() {
+		return death;
+	}
+
+	public Integer getHospitalized() {
+		return hospitalized;
+	}
+
+	public Integer getTotal() {
+		return total;
+	}
+
+	public Integer getTotalTestResults() {
+		return totalTestResults;
+	}
+
+	public Integer getPosNeg() {
+		return posNeg;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
 }

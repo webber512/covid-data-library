@@ -11,4 +11,24 @@ public class CDCData {
 	Integer dailyTotal;
 	Integer lag;
 
+	public String getDateCollected() {
+		return dateCollected;
+	}
+
+	public Integer getCdcLabs() {
+		return cdcLabs;
+	}
+
+	public Integer getUsPublicHealthLabs() {
+		return usPublicHealthLabs;
+	}
+
+	public Integer getDailyTotal() {
+		return dailyTotal;
+	}
+
+	public Integer getLag() {
+		return lag;
+	}
+
 }

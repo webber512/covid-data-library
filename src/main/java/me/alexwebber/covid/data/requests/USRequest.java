@@ -6,11 +6,11 @@ import me.alexwebber.covid.data.Deserializer;
 import me.alexwebber.covid.data.models.BasicData;
 import me.alexwebber.covid.data.models.BasicHistoricalData;
 
-public class USDataRequest {
+public class USRequest {
 
 	private DataRequest covid;
 
-	public USDataRequest(DataRequest dataRequest) {
+	public USRequest(DataRequest dataRequest) {
 		covid = dataRequest;
 	}
 

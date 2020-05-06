@@ -1,12 +1,14 @@
 package me.alexwebber.covid.data.requests;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import me.alexwebber.covid.data.Deserializer;
 import me.alexwebber.covid.data.models.StateData;
 import me.alexwebber.covid.data.models.StateHistoricalData;
 import me.alexwebber.covid.data.models.StateInfo;
+import me.alexwebber.covid.data.objects.StateListObject;
 
 public class StateRequest {
 
@@ -44,6 +46,16 @@ public class StateRequest {
 	public List<StateInfo> getStateInfo() throws IOException {
 		String directory = "/states/info.json";
 		return Deserializer.toStateInfo(covid.getDataCovid(directory).json);
+	}
 
+	public List<StateListObject> getStates() throws IOException {
+		List<StateInfo> stateInfoList = getStateInfo();
+		List<StateListObject> states = new ArrayList<>();
+
+		for (StateInfo s : stateInfoList) {
+			states.add(new StateListObject(s.getState(), s.getName()));
+		}
+
+		return states;
 	}
 }

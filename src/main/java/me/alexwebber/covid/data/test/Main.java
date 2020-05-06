@@ -4,19 +4,16 @@ import java.io.IOException;
 import java.util.List;
 
 import me.alexwebber.covid.data.COVIDData;
-import me.alexwebber.covid.data.models.StateData;
+import me.alexwebber.covid.data.objects.StateListObject;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
 		COVIDData covid = new COVIDData();
-		List<StateData> sd = covid.state.getDataAsOfToday();
-		for (StateData s : sd) {
-			System.out.println(s.getState() + "     " + s.getPositive());
+		List<StateListObject> states = covid.state.getStates();
+		for (StateListObject s : states) {
+			System.out.println(s.getAbbreviation() + "     " + s.getName());
 		}
-
-		StateData sdks = covid.state.getDataForStateAsOfToday("KS");
-		System.out.println(sdks.getTotalTestResults());
 	}
 
 }

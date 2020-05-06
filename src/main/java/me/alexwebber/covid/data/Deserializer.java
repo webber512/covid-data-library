@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 import me.alexwebber.covid.data.models.BasicData;
 import me.alexwebber.covid.data.models.BasicHistoricalData;
+import me.alexwebber.covid.data.models.StateData;
 
 public class Deserializer {
 
@@ -21,6 +22,16 @@ public class Deserializer {
 
 	public static BasicHistoricalData toBasicHistoricalDataForDate(String json) {
 		BasicHistoricalData data = gson.fromJson(json, BasicHistoricalData.class);
+		return data;
+	}
+
+	public static StateData[] toStateDataAsOfToday(String json) {
+		StateData[] data = gson.fromJson(json, StateData[].class);
+		return data;
+	}
+
+	public static StateData toStateDataForStateAsOfToday(String json) {
+		StateData data = gson.fromJson(json, StateData.class);
 		return data;
 	}
 

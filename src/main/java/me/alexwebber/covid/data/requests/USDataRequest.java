@@ -14,18 +14,18 @@ public class USDataRequest {
 		covid = dataRequest;
 	}
 
-	public BasicData getBasicDataAsOfToday() throws IOException {
+	public BasicData getDataAsOfToday() throws IOException {
 		String directory = "/us/current.json";
 		return Deserializer.toBasicDataAsOfToday(covid.getDataCovid(directory).json);
 
 	}
 
-	public BasicHistoricalData[] getBasicHistoricalDataAllTime() throws IOException {
+	public BasicHistoricalData[] getDataAllTime() throws IOException {
 		String directory = "/us/daily.json";
 		return Deserializer.toBasicHistoricalDataAllTime(covid.getDataCovid(directory).json);
 	}
 
-	public BasicHistoricalData getBasicHistoricalDataForDate(String date) throws IOException {
+	public BasicHistoricalData getDataForDate(String date) throws IOException {
 		String directory = "/us/" + date + ".json";
 		return Deserializer.toBasicHistoricalDataForDate(covid.getDataCovid(directory).json);
 	}

@@ -1,6 +1,7 @@
 package me.alexwebber.covid.data.requests;
 
 import java.io.IOException;
+import java.util.List;
 
 import me.alexwebber.covid.data.Deserializer;
 import me.alexwebber.covid.data.models.StateData;
@@ -15,7 +16,7 @@ public class StateRequest {
 		covid = dataRequest;
 	}
 
-	public StateData[] getDataAsOfToday() throws IOException {
+	public List<StateData> getDataAsOfToday() throws IOException {
 		String directory = "/states/current.json";
 		return Deserializer.toStateDataAsOfToday(covid.getDataCovid(directory).json);
 	}
@@ -25,12 +26,12 @@ public class StateRequest {
 		return Deserializer.toStateDataForStateAsOfToday(covid.getDataCovid(directory).json);
 	}
 
-	public StateHistoricalData[] getDataAllTimeForStates() throws IOException {
+	public List<StateHistoricalData> getDataAllTimeForStates() throws IOException {
 		String directory = "/states/daily.json";
 		return Deserializer.toStateDataAllTimeForStates(covid.getDataCovid(directory).json);
 	}
 
-	public StateHistoricalData[] getDataAllTimeForState(String state) throws IOException {
+	public List<StateHistoricalData> getDataAllTimeForState(String state) throws IOException {
 		String directory = "/states/" + state + "/daily.json";
 		return Deserializer.toStateDataAllTimeForState(covid.getDataCovid(directory).json);
 	}
@@ -40,7 +41,7 @@ public class StateRequest {
 		return Deserializer.toStateDataForStateAndDate(covid.getDataCovid(directory).json);
 	}
 
-	public StateInfo[] getStateInfo() throws IOException {
+	public List<StateInfo> getStateInfo() throws IOException {
 		String directory = "/states/info.json";
 		return Deserializer.toStateInfo(covid.getDataCovid(directory).json);
 

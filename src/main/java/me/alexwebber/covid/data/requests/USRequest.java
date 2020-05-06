@@ -1,6 +1,7 @@
 package me.alexwebber.covid.data.requests;
 
 import java.io.IOException;
+import java.util.List;
 
 import me.alexwebber.covid.data.Deserializer;
 import me.alexwebber.covid.data.models.BasicData;
@@ -20,7 +21,7 @@ public class USRequest {
 
 	}
 
-	public BasicHistoricalData[] getDataAllTime() throws IOException {
+	public List<BasicHistoricalData> getDataAllTime() throws IOException {
 		String directory = "/us/daily.json";
 		return Deserializer.toBasicHistoricalDataAllTime(covid.getDataCovid(directory).json);
 	}

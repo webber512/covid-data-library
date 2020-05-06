@@ -1,5 +1,9 @@
 package me.alexwebber.covid.data;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.google.gson.Gson;
 
 import me.alexwebber.covid.data.models.BasicData;
@@ -21,9 +25,10 @@ public class Deserializer {
 		return data[0];
 	}
 
-	public static BasicHistoricalData[] toBasicHistoricalDataAllTime(String json) {
+	public static List<BasicHistoricalData> toBasicHistoricalDataAllTime(String json) {
 		BasicHistoricalData[] data = gson.fromJson(json, BasicHistoricalData[].class);
-		return data;
+		List<BasicHistoricalData> list = new ArrayList<BasicHistoricalData>(Arrays.asList(data));
+		return list;
 	}
 
 	public static BasicHistoricalData toBasicHistoricalDataForDate(String json) {
@@ -31,9 +36,10 @@ public class Deserializer {
 		return data;
 	}
 
-	public static StateData[] toStateDataAsOfToday(String json) {
+	public static List<StateData> toStateDataAsOfToday(String json) {
 		StateData[] data = gson.fromJson(json, StateData[].class);
-		return data;
+		List<StateData> list = new ArrayList<StateData>(Arrays.asList(data));
+		return list;
 	}
 
 	public static StateData toStateDataForStateAsOfToday(String json) {
@@ -41,14 +47,16 @@ public class Deserializer {
 		return data;
 	}
 
-	public static StateHistoricalData[] toStateDataAllTimeForStates(String json) {
+	public static List<StateHistoricalData> toStateDataAllTimeForStates(String json) {
 		StateHistoricalData[] data = gson.fromJson(json, StateHistoricalData[].class);
-		return data;
+		List<StateHistoricalData> list = new ArrayList<StateHistoricalData>(Arrays.asList(data));
+		return list;
 	}
 
-	public static StateHistoricalData[] toStateDataAllTimeForState(String json) {
+	public static List<StateHistoricalData> toStateDataAllTimeForState(String json) {
 		StateHistoricalData[] data = gson.fromJson(json, StateHistoricalData[].class);
-		return data;
+		List<StateHistoricalData> list = new ArrayList<StateHistoricalData>(Arrays.asList(data));
+		return list;
 	}
 
 	public static StateHistoricalData toStateDataForStateAndDate(String json) {
@@ -56,29 +64,34 @@ public class Deserializer {
 		return data;
 	}
 
-	public static StateInfo[] toStateInfo(String json) {
+	public static List<StateInfo> toStateInfo(String json) {
 		StateInfo[] data = gson.fromJson(json, StateInfo[].class);
-		return data;
+		List<StateInfo> list = new ArrayList<StateInfo>(Arrays.asList(data));
+		return list;
 	}
 
-	public static CountyInfo[] toCountyArray(String json) {
+	public static List<CountyInfo> toCountyArray(String json) {
 		CountyInfo[] data = gson.fromJson(json, CountyInfo[].class);
-		return data;
+		List<CountyInfo> list = new ArrayList<CountyInfo>(Arrays.asList(data));
+		return list;
 	}
 
-	public static CDCData[] toCDCDataArray(String json) {
+	public static List<CDCData> toCDCDataArray(String json) {
 		CDCData[] data = gson.fromJson(json, CDCData[].class);
-		return data;
+		List<CDCData> list = new ArrayList<CDCData>(Arrays.asList(data));
+		return list;
 	}
 
-	public static TrackerInfo[] toURLDataArray(String json) {
+	public static List<TrackerInfo> toURLDataArray(String json) {
 		TrackerInfo[] data = gson.fromJson(json, TrackerInfo[].class);
-		return data;
+		List<TrackerInfo> list = new ArrayList<TrackerInfo>(Arrays.asList(data));
+		return list;
 	}
 
-	public static ScreenshotInfo[] toScreenshotInfoArray(String json) {
+	public static List<ScreenshotInfo> toScreenshotInfoArray(String json) {
 		ScreenshotInfo[] data = gson.fromJson(json, ScreenshotInfo[].class);
-		return data;
+		List<ScreenshotInfo> list = new ArrayList<ScreenshotInfo>(Arrays.asList(data));
+		return list;
 	}
 
 }

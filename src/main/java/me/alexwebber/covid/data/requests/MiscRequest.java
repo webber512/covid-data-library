@@ -1,6 +1,7 @@
 package me.alexwebber.covid.data.requests;
 
 import java.io.IOException;
+import java.util.List;
 
 import me.alexwebber.covid.data.Deserializer;
 import me.alexwebber.covid.data.models.CDCData;
@@ -14,17 +15,17 @@ public class MiscRequest {
 		covid = dataRequest;
 	}
 
-	public CDCData[] getAllCDCData() throws IOException {
+	public List<CDCData> getAllCDCData() throws IOException {
 		String directory = "/cdc/daily.json";
 		return Deserializer.toCDCDataArray(covid.getDataCovid(directory).json);
 	}
 
-	public TrackerInfo[] getAllUrls() throws IOException {
+	public List<TrackerInfo> getAllUrls() throws IOException {
 		String directory = "/urls.json";
 		return Deserializer.toURLDataArray(covid.getDataCovid(directory).json);
 	}
 	
-	public ScreenshotInfo[] getAllScreenshots() throws IOException {
+	public List<ScreenshotInfo> getAllScreenshots() throws IOException {
 		String directory = "/states/screenshots.json";
 		return Deserializer.toScreenshotInfoArray(covid.getDataCovid(directory).json);
 	}

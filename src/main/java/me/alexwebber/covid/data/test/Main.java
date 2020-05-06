@@ -1,6 +1,7 @@
 package me.alexwebber.covid.data.test;
 
 import java.io.IOException;
+import java.util.List;
 
 import me.alexwebber.covid.data.COVIDData;
 import me.alexwebber.covid.data.models.StateData;
@@ -9,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		COVIDData covid = new COVIDData();
-		StateData[] sd = covid.state.getDataAsOfToday();
+		List<StateData> sd = covid.state.getDataAsOfToday();
 		for (StateData s : sd) {
 			System.out.println(s.getState() + "     " + s.getPositive());
 		}

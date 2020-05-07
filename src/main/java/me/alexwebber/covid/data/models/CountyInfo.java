@@ -17,7 +17,7 @@ public class CountyInfo {
 		return state;
 	}
 
-	public String getCounty() {
+	public String getCountyName() {
 		return county;
 	}
 

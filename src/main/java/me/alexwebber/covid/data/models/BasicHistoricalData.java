@@ -2,6 +2,14 @@ package me.alexwebber.covid.data.models;
 
 import lombok.Value;
 
+/**
+ * The BasicHistoricalData class contains fields for the BasicHistoricalData
+ * schema from The COVID Tracking Project
+ * 
+ * @author Alex Webber
+ * @version 1.0
+ * @since 2020-05-05
+ */
 @Value
 public class BasicHistoricalData {
 

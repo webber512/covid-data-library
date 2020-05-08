@@ -16,7 +16,7 @@ public class CountyRequest {
 
 	public List<CountyInfo> getAllCounties() throws IOException {
 		String directory = "/counties.json";
-		return Deserializer.toCountyArray(covid.getDataCovid(directory).json);
+		return Deserializer.toCountyArray(covid.getDataCovid(directory).getJson());
 	}
 
 	public List<CountyInfo> getCountiesInState(String state) throws IOException {

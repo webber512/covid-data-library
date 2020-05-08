@@ -17,16 +17,16 @@ public class MiscRequest {
 
 	public List<CDCData> getAllCDCData() throws IOException {
 		String directory = "/cdc/daily.json";
-		return Deserializer.toCDCDataArray(covid.getDataCovid(directory).json);
+		return Deserializer.toCDCDataArray(covid.getDataCovid(directory).getJson());
 	}
 
 	public List<TrackerInfo> getAllUrls() throws IOException {
 		String directory = "/urls.json";
-		return Deserializer.toURLDataArray(covid.getDataCovid(directory).json);
+		return Deserializer.toURLDataArray(covid.getDataCovid(directory).getJson());
 	}
-	
+
 	public List<ScreenshotInfo> getAllScreenshots() throws IOException {
 		String directory = "/states/screenshots.json";
-		return Deserializer.toScreenshotInfoArray(covid.getDataCovid(directory).json);
+		return Deserializer.toScreenshotInfoArray(covid.getDataCovid(directory).getJson());
 	}
 }

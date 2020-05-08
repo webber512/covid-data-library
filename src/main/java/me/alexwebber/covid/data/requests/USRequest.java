@@ -17,18 +17,18 @@ public class USRequest {
 
 	public BasicData getDataAsOfToday() throws IOException {
 		String directory = "/us/current.json";
-		return Deserializer.toBasicDataAsOfToday(covid.getDataCovid(directory).json);
+		return Deserializer.toBasicDataAsOfToday(covid.getDataCovid(directory).getJson());
 
 	}
 
 	public List<BasicHistoricalData> getDataAllTime() throws IOException {
 		String directory = "/us/daily.json";
-		return Deserializer.toBasicHistoricalDataAllTime(covid.getDataCovid(directory).json);
+		return Deserializer.toBasicHistoricalDataAllTime(covid.getDataCovid(directory).getJson());
 	}
 
 	public BasicHistoricalData getDataForDate(String date) throws IOException {
 		String directory = "/us/" + date + ".json";
-		return Deserializer.toBasicHistoricalDataForDate(covid.getDataCovid(directory).json);
+		return Deserializer.toBasicHistoricalDataForDate(covid.getDataCovid(directory).getJson());
 	}
 
 }
